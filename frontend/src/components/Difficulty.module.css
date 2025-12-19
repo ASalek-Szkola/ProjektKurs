@@ -1,5 +1,14 @@
+.difficultyDiv {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
-span {
-    margin-left: 0.25rem;
+.difficultyDiv svg {
+  display: block;
+  height: 1em;
+}
 
+.difficultyDiv span {
+  line-height: 1;
 }
