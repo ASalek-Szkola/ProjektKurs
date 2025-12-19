@@ -19,9 +19,14 @@ body{
     font-size: 30px;
     text-align: center;
     border-radius: 16px;
+    overflow: hidden;
 }
 
 .courseCard img{
     max-width: 100%;
     height: auto;
+}
+
+figure{
+    margin: 0;
 }

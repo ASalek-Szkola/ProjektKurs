@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Lis 28, 2025 at 12:04 PM
+-- Generation Time: Dec 19, 2025 at 10:24 AM
 -- Wersja serwera: 10.4.32-MariaDB
 -- Wersja PHP: 8.2.12
 
@@ -47,11 +47,19 @@ CREATE TABLE `courses` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `description` text NOT NULL,
-  `image` VARCHAR(255),
+  `image` varchar(255) DEFAULT NULL,
   `creator_id` int(11) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `difficulty` enum('Hard','Medium','Easy') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `courses`
+--
+
+INSERT INTO `courses` (`id`, `name`, `description`, `image`, `creator_id`, `price`, `difficulty`) VALUES
+(1, 'Java Podstawy', 'Dowiedz się wszystkiego o Java z naszym trenerem Tymoteuszem!', NULL, 6, 100, 'Easy'),
+(2, 'Techniki Adam Coding', 'Poznaj sekrety pisania zaawansowanego kodu z użyciem nowoczesnych Technik Adam Coding.', NULL, 9, 999, 'Hard');
 
 -- --------------------------------------------------------
 
@@ -66,7 +74,7 @@ CREATE TABLE `lessons` (
   `description` text NOT NULL,
   `chapter_id` int(11) NOT NULL,
   `duration` int(11) NOT NULL,
-  `video_url` VARCHAR(255)
+  `video_url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -84,6 +92,21 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `isAdmin` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `surname`, `email`, `password`, `isAdmin`) VALUES
+(1, 'Artur', '', '', '', NULL),
+(2, 'Zbigniew', '', '', '', NULL),
+(3, 'Zbigniew', '', '', '', NULL),
+(4, 'Zbigniew', '', '', '', NULL),
+(5, 'Zbigniew', '', '', '', NULL),
+(6, 'Zbigniew', '', '', '', NULL),
+(7, 'Zbigniew', '', '', '', NULL),
+(8, 'Zbigniew', '', '', '', NULL),
+(9, 'Adam', 'Pasieka', '', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -149,7 +172,7 @@ ALTER TABLE `chapters`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `lessons`
@@ -161,7 +184,7 @@ ALTER TABLE `lessons`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Constraints for dumped tables
