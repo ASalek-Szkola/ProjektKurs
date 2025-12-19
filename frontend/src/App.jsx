@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-// import './App.css';
-import './css/nasz.css';
+import './App.css';
 import NavigationPanel from './components/NavigationPanel';
 import CoursePanel from './components/CoursePanel';
 

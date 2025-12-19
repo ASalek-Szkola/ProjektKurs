@@ -1,0 +1,28 @@
+.courseImage {
+    max-width: 100%;
+    height: auto;
+} 
+
+.courseCardFigure {
+    margin: 0;
+}
+
+.courseCard {
+  background-color: #f1f1f1;
+  border: 1px solid black;
+  font-size: 30px;
+  text-align: center;
+  border-radius: 16px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.infoPriceDiv {
+    width: 100%;
+    left: 0;    
+}
+
+.infoList {
+    list-style-type: none;
+    left: 0;
+}
