@@ -1,3 +1,4 @@
+import styles from './Difficulty.module.css'
 
 export default function Difficulty({ difficulty }) {
     switch (difficulty) {
@@ -8,7 +9,7 @@ export default function Difficulty({ difficulty }) {
             </>
         case "Medium":
             return <>
-                
+
             </>
         case "Hard":
             return <>
