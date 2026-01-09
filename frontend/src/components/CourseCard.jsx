@@ -10,9 +10,9 @@ function CourseCard({ course }) {
         <img className={styles['courseImage']} alt="img" loading="lazy" width="1280" height="800" decoding="async" src="https://sklep.szurek.tv/img/bezpieczny_programista.png"></img>
         {/* <img src={course.img} alt={course.name} className="courseCardImg"/> */}
       </figure>
-      <div>
+      <div className={styles['courseCardBody']}>
         <div>
-          <h3 className="courseCardName">{course.name}</h3>
+          <h3 className={styles['courseCardName']}>{course.name}</h3>
           <p className="courseCardDescription">{course.description}</p>
         </div>
         <div className={styles['infoPriceDiv']}>

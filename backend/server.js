@@ -28,7 +28,7 @@ app.get("/get-users", async (req, res) => {
 app.get("/get-courses", async (req, res) => {
     try {;
         const [results] = await db_conn.execute(
-            `SELECT * FROM courses`
+            `SELECT *, (SELECT SUM(lessons.duration) FROM courses LEFT JOIN chapters ON courses.id = chapters.course_id LEFT JOIN lessons ON chapters.id = lessons.id WHERE courses.id = c.id) AS 'duration' FROM courses c`
         );
         res.status(200).json(results);
     } catch (err) {
@@ -40,7 +40,7 @@ app.get("/get-courses", async (req, res) => {
 app.get("/get-courses-with-authors", async (req, res) => {
     try {;
         const [results] = await db_conn.execute(
-            `SELECT * FROM courses`
+            `SELECT c.id, c.name, c.description, c.image, u.name AS 'creator_name', u.surname AS 'creator_surname', u.email AS 'creator_email', c.price, c.difficulty, (SELECT SUM(lessons.duration) FROM courses LEFT JOIN chapters ON courses.id = chapters.course_id LEFT JOIN lessons ON chapters.id = lessons.id WHERE courses.id = c.id) AS 'duration' FROM courses c JOIN users u ON c.creator_id = u.id`
         );
         res.status(200).json(results);
     } catch (err) {

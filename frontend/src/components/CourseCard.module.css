@@ -1,6 +1,11 @@
+article{
+    font-family: ui-sans-serif, system-ui;
+}
+
 .courseImage {
     max-width: 100%;
     height: auto;
+    display: block;
 } 
 
 .courseCardFigure {
@@ -35,6 +40,22 @@ button{
     text-align: center;
     height: 3rem;
     width: 80%;
+}
+
+.courseCardName{
+    align-items: center;
+    gap: .5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    display: flex;
+    margin: 0;
+}
+
+.courseCardBody{
+    padding: 1rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
 }
 
 /* Żeby ikona zegara było takiej samej wysokości jak SVG ikonki trudności */
