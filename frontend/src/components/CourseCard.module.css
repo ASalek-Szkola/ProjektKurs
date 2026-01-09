@@ -1,3 +1,7 @@
+article{
+    font-family: ui-sans-serif, system-ui;
+}
+
 .courseImage {
     max-width: 100%;
     height: auto;
@@ -11,7 +15,7 @@
   background-color: #f1f1f1;
   border: 1px solid black;
   font-size: 30px;
-  text-align: center;
+  /* text-align: center; */
   border-radius: 16px;
   padding: 0;
   overflow: hidden;
@@ -38,13 +42,15 @@ button{
 .courseCardName{
     align-items: center;
     gap: .5rem;
+    font-size: 1.25rem;
     font-weight: 600;
     line-height: 1.75rem;
     display: flex;
-    font-family: ui-sans-serif, system-ui;
 }
-h3{
-    font-size: 20px;
-    /* font-family: ui-sans-serif, system-ui; */
 
+.courseCardBody{
+    padding: 1rem;
+    font-size: .875rem;
+    line-height: 1.25rem;
+    background-color: orange;
 }
