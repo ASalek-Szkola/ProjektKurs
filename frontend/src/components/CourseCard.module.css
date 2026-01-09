@@ -11,20 +11,22 @@
   background-color: #f1f1f1;
   border: 1px solid black;
   font-size: 30px;
-  text-align: center;
   border-radius: 16px;
-  padding: 0;
+    padding: 0;
+
   overflow: hidden;
 }
 
 .infoPriceDiv {
+    display: flex;
+    align-items: flex-end;
+
     width: 100%;
     left: 0;    
 }
 
-.infoList {
-    list-style-type: none;
-    left: 0;
+.infoPriceDiv * {
+    padding-left: 0.5rem;
 }
 
 button{
@@ -33,4 +35,42 @@ button{
     text-align: center;
     height: 3rem;
     width: 80%;
+}
+
+/* Żeby ikona zegara było takiej samej wysokości jak SVG ikonki trudności */
+.liczbaGodzin svg {
+    height: 30px;
+}
+
+/* Usuwanie domyślnego stylowania */
+.infoList {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.infoList li {
+  display: flex;
+  padding: 4px 0;
+}
+
+/* Środkowanie tekstu pionowo, równo do SVG */
+.liczbaGodzin {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-left: 0; 
+}
+
+.liczbaGodzin svg {
+  display: block;
+  flex-shrink: 0;
+  height: 1.2em;
+  width: auto;
+}
+
+/* Cena do prawej */
+.courseCardPrice {
+    text-align: right !important; 
+    margin-right: 0;
 }

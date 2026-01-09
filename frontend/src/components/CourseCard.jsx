@@ -21,12 +21,14 @@ function CourseCard({ course }) {
               <Difficulty difficulty={course.difficulty} />
             </li>
             <li>
-              {/* <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg> */}
-              Liczba godzin
+              <div className={styles['liczbaGodzin']}>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon" class="h-6 w-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"></path></svg>
+                <span>Liczba godzin</span>
+              </div>
             </li>
           </ul>
-          <div>
-            <span className="courseCardPrice">{course.price} PLN</span>
+          <div className={styles['courseCardPrice']}>
+            <span>{course.price} PLN</span>
           </div>
         </div>
       </div>

@@ -1,14 +1,14 @@
+/* Środkowanie tekstu pionowo, równo do SVG */
 .difficultyDiv {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
+  padding-left: 0; 
 }
 
 .difficultyDiv svg {
   display: block;
-  height: 1em;
-}
-
-.difficultyDiv span {
-  line-height: 1;
+  flex-shrink: 0;
+  height: 1.2em;
+  width: auto;
 }
