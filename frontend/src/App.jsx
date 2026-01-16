@@ -23,6 +23,12 @@ function App() {
     <>
       <NavigationPanel/>
       <CoursePanel courses={courses}/>
+      <button onClick={() => {
+        const body = document.querySelector("body");
+        body.classList.toggle("dark");
+        this.textContent = body.classList.contains("dark") ? "Change to Light Mode" : "Change to Dark Mode";
+      }}>Change to Dark Mode</button>
+
     </>
   );
 }

@@ -1,13 +1,13 @@
 body{
     margin: 10;
 
-    
+    color: var(--foreground);
 }
 
 .coursePanelGrid{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background-color: dodgerblue;
+    background-color: var(--background);
     gap: 1.5rem;
     padding: 48px 40px 40px 40px;
     max-width: 80rem;
@@ -15,8 +15,8 @@ body{
 }
 
 .coursePanelGrid .courseCard {
-    background-color: #f1f1f1;
-    border: 1px solid black;
+    background-color: var(--background);
+    border: var(--border);
     /* padding: 10px; */
     font-size: 30px;
     text-align: center;
