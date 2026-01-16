@@ -12,6 +12,8 @@ app.use(express.json());
 
 import { db_conn } from "./db.js";
 
+app.use(express.static('public'))
+
 
 app.get("/get-users", async (req, res) => {
     try {;
