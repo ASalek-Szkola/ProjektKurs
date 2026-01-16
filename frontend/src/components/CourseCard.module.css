@@ -38,13 +38,13 @@ article{
     padding-left: 0.5rem;
 }
 
-button{
+/* button{
     cursor: pointer;
     border-radius: 0.5rem;
     text-align: center;
     height: 3rem;
     width: 80%;
-}
+} */
 
 .courseCardName{
     align-items: center;
