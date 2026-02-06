@@ -1,36 +1,19 @@
-import { useEffect, useState } from 'react';
-import './App.css';
-import NavigationPanel from './components/NavigationPanel';
-import CoursePanel from './components/CoursePanel';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './components/Login';
+import ProtectedPage from './components/ProtectedPage';
+import MainPage from "./components/MainPage";
 
-function App() {
-  const [courses, setCourses] = useState([]);
-
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch("http://localhost:3000/get-courses-with-authors");
-        if (!response.ok) throw new Error("Response not OK");
-        const json = await response.json();
-        setCourses(json);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-  }, []);
-
-  return (
-    <>
-      <NavigationPanel/>
-      <CoursePanel courses={courses}/>
-      <button onClick={() => {
-        const body = document.querySelector("body");
-        body.classList.toggle("dark");
-        this.textContent = body.classList.contains("dark") ? "Change to Light Mode" : "Change to Dark Mode";
-      }}>Change to Dark Mode</button>
-
-    </>
-  );
-}
+const App = () => {
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<MainPage />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/protected" element={<ProtectedPage />} />
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;
