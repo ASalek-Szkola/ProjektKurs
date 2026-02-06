@@ -2,8 +2,6 @@ body {
   margin: 10;
 
   color: var(--foreground);
-
-  background-color: var(--background);
 }
 
 .coursePanelGrid {
