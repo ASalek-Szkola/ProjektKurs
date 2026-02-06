@@ -19,7 +19,7 @@ const Registration = () => {
     const handleRegistration = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3000/add-user', { name, password });
+            const response = await axios.post('http://localhost:3000/register', { name, password });
             Cookies.set('token', response.data.token, { expires: 1 });
             navigate('/protected');
         } catch (error) {

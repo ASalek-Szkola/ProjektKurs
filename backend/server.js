@@ -53,8 +53,8 @@ app.get("/get-courses-with-authors", async (req, res) => {
     }
 })
 
-app.post("/add-user", async (req, res) => {
-    console.log(req.body);
+app.post("/register", async (req, res) => {
+    // console.log(req.body);
     try {
         const body = req.body;
         const name = body.name;
@@ -65,7 +65,12 @@ app.post("/add-user", async (req, res) => {
             `INSERT INTO users (name, password) VALUES (?, ?)`,
             [name, hashedPassword]
         );
-        res.status(200).json({ insertId: results.insertId });
+
+        const token = jwt.sign({ id: results.insertId }, process.env.JWT_SECRET, {
+            expiresIn: '1h'
+        });
+
+        res.status(200).json({ token });
     } catch (err) {
         console.log(err);
         res.sendStatus(500);
