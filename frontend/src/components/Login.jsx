@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'js-cookie';
 
 const Login = () => {
     const [name, setName] = useState('');
@@ -9,7 +10,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
+        const token = Cookies.get('token');
         if (token) {
             navigate('/protected');
         }
@@ -19,7 +20,7 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post('http://localhost:3000/login', { name, password });
-            localStorage.setItem('token', response.data.token); // Trrzeba zmienic na cookiesy
+            Cookies.set('token', response.data.token, { expires: 1 }); // 1 dzień
             navigate('/protected');
         } catch (error) {
             setErrorMessage('Niepoprawne dane logowania');

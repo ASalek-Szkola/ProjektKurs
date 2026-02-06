@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Cookies from 'js-cookie'; // Import biblioteki do obsługi ciasteczek
 
 const ProtectedPage = () => {
     const [message, setMessage] = useState('');
 
     useEffect(() => {
-        const token = localStorage.getItem('token');
+        const token = Cookies.get('token'); // Użyj ciasteczek do pobrania tokenu
         if (!token) {
             setMessage('Musisz być zalogowany, aby zobaczyć tę stronę.');
             return;
