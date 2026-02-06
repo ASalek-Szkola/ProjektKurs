@@ -12,7 +12,7 @@ function NavigationPanel({  }) {
         <div>
           <button className={styles['button']}>Koszyk</button>
           <button>
-            <a>Zaloguj się</a>
+            <a href='/login'>Zaloguj się</a>
           </button>
         </div>
 

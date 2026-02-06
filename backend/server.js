@@ -61,6 +61,10 @@ app.post("/register", async (req, res) => {
         const password = body.password;
         const hashedPassword = await bcrypt.hash(password, 10); 
 
+        if(!name || name.length < 3 || !password || password.length < 3){
+            return res.status(400).json({ error: '' });
+        }
+
         const [results] = await db_conn.execute(
             `INSERT INTO users (name, password) VALUES (?, ?)`,
             [name, hashedPassword]
