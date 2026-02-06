@@ -1,4 +1,4 @@
-/* body {
+body {
   margin: 10;
 
   color: var(--foreground);
@@ -19,7 +19,8 @@
 .coursePanelGrid .courseCard {
   background-color: var(--card);
   border: var(--border);
+  /* padding: 10px; */
   font-size: 30px;
   text-align: center;
   border-radius: 16px;
-} */
+}

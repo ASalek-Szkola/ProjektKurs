@@ -6,9 +6,9 @@ function CoursePanel({ courses }) {
     console.log(courses)
 
     const courseCards = []
-    courses.forEach(c => {
+    courses.forEach((c, index) => {
         courseCards.push(
-            <CourseCard course={c}/>
+            <CourseCard key={index} course={c}/>
         )
     });
 
