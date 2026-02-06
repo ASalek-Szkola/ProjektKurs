@@ -5,7 +5,7 @@ function NavigationPanel({  }) {
       <nav>
         {/* Lewy */}
         <div>
-          <h3>Nazwa</h3>
+          <span>Nazwa</span>
         </div>
 
         {/* Prawy */}
@@ -16,10 +16,9 @@ function NavigationPanel({  }) {
           </button>
         </div>
 
-
-        <span>Nazwa</span>
+        {/* <span>Nazwa</span>
         <img src="./assets/" alt="Koszyk"></img>
-        <img src="./assets/" alt="Konto"></img>
+        <img src="./assets/" alt="Konto"></img> */}
       </nav>
     );
 }
