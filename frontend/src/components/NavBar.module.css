@@ -1,9 +1,17 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-right: 10px;
   padding-left: 10px;
+
+  width: 75vw;
 }
 
 .nav-links {
@@ -15,7 +23,7 @@
 .login-btn {
     background-color: var(--foreground);
 
-    border-radius: 0.75em;
+    border-radius: var(--radius);
     padding: 10px;
     text-align: center;
 
