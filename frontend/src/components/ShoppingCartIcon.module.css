@@ -1,0 +1,19 @@
+.icon-cart {
+    color: #000000;
+    transition: color 0.3s ease;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.icon-cart path {
+    fill: currentColor;
+}
+
+.wrapper {
+    background-color: white;
+    border-radius: 0.75em;
+    width: 40px;
+    height: 40px;
+
+    padding: 5px;
+}

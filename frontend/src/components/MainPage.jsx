@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 import './MainPage.css';
-import NavigationPanel from './components/NavigationPanel';
-import CoursePanel from './components/CoursePanel';
-import DarkModeGifSwitch from "./components/DarkModeGifSwitch";
+import NavigationPanel from './NavigationPanel';
+import CoursePanel from './CoursePanel';
 
 function App() {
   const [courses, setCourses] = useState([]);
@@ -22,9 +21,7 @@ function App() {
 
   return (
     <>
-      <NavigationPanel/>
       <CoursePanel courses={courses}/>
-      <DarkModeGifSwitch width={100} height={100} />
     </>
   );
 }

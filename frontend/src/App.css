@@ -1,0 +1,5 @@
+body {
+    background-color: var(--background);
+
+    font-family: ui-sans-serif, system-ui;
+}

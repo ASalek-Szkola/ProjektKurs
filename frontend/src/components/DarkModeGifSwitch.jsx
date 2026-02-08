@@ -36,7 +36,8 @@ const DarkModeGifSwitch = ({ width = 200, height = 200 }) => {
                 margin: 'auto',
                 width,
                 height,
-                backgroundColor: "white"
+                backgroundColor: "white",
+                borderRadius: "0.75em"
             }}>
 
             <Lottie
