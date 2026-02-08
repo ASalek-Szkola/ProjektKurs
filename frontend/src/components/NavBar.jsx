@@ -6,7 +6,9 @@ export default function NavBar() {
     return ( <>
         <nav className={styles["navbar"]}>
             <div className={styles['logo']}>
-                Just Jaruzel It
+                <a href="/">
+                    Just Jaruzel It
+                </a>
             </div>
 
             <div className={styles['nav-links']}>
@@ -15,7 +17,7 @@ export default function NavBar() {
                 <DarkModeGifSwitch width={50} height={50} />
 
                 <div className={styles['login-btn']}>   
-                    <a>
+                    <a href='/login'>
                         Zaloguj się
                     </a>
                 </div>

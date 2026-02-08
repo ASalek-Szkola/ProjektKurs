@@ -14,7 +14,6 @@
 
 .login-btn {
     background-color: var(--foreground);
-    color: var(--background);
 
     border-radius: 0.75em;
     padding: 10px;
@@ -23,12 +22,15 @@
     transition: color 0.3s ease;
 }
 
-.logo {
+.login-btn a {
+    text-decoration: none;
+    color: var(--background);
+}
+
+.logo a {
     color: var(--foreground);
-
-    text-align: center;
-
-    transition: color 0.3s ease;
-
+    text-decoration: none;
     font-size: xx-large;
+    text-align: center;
+    transition: color 0.3s ease;
 }
