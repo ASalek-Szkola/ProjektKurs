@@ -53,3 +53,12 @@
   border-radius: var(--radius);
   border: 0.1px solid black;
 }
+
+.shopping-cart-icon {
+  background-color: white;
+  border-radius: var(--radius);
+  width: var(--icon-width);
+  height: var(--icon-height);
+
+  padding: var(--icon-padding);
+}
