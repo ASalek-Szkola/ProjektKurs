@@ -2,8 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import Lottie from 'lottie-react';
 import animationData from '../assets/icons8-sun.json';
 
-const DarkModeGifSwitch = ({ width = 200, height = 200 }) => {
+const DarkModeGifSwitch = () => {
     const lottieRef = useRef(null);
+    const wrapperRef = useRef(null);
     const wasPausedOnStart = useRef(false);
 
     const totalFrames = animationData.op;
@@ -14,18 +15,14 @@ const DarkModeGifSwitch = ({ width = 200, height = 200 }) => {
         return saved === "true" ? 1 : 0;
     });
 
-    // Body class sync
+    // Sync body class
     useEffect(() => {
-        if (step === 1) {
-            document.body.classList.add("dark");
-        } else {
-            document.body.classList.remove("dark");
-        }
+        document.body.classList.toggle("dark", step === 1);
     }, [step]);
+
 
     const handleInit = () => {
         if (lottieRef.current && !wasPausedOnStart.current) {
-            // Snap to appropirate frame on load
             if (step === 1) {
                 lottieRef.current.goToAndStop(twoThirdFrame, true);
             } else {
@@ -38,14 +35,11 @@ const DarkModeGifSwitch = ({ width = 200, height = 200 }) => {
     const toggleTheme = () => {
         if (!lottieRef.current) return;
 
-        // With animation
         if (step === 0) {
-            // Light -> Dark
             lottieRef.current.playSegments([0, twoThirdFrame], true);
             localStorage.setItem("darkMode", "true");
             setStep(1);
         } else {
-            // Dark -> Light
             lottieRef.current.playSegments([twoThirdFrame, totalFrames], true);
             localStorage.setItem("darkMode", "false");
             setStep(0);
@@ -54,14 +48,16 @@ const DarkModeGifSwitch = ({ width = 200, height = 200 }) => {
 
     return (
         <div 
+            ref={wrapperRef}
             onClick={toggleTheme}
             style={{ 
                 cursor: 'pointer', 
                 margin: 'auto',
-                width,
-                height,
+                width: "var(--icon-width)",
+                height: "var(--icon-height)",
+                padding: "var(--icon-padding)",
                 backgroundColor: "white", 
-                borderRadius: "0.75em",
+                borderRadius: "var(--radius)",
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -74,7 +70,10 @@ const DarkModeGifSwitch = ({ width = 200, height = 200 }) => {
                 loop={false}
                 autoplay={false}
                 onDOMLoaded={handleInit}
-                style={{ width, height }}
+                style={{
+                    width: parseFloat(window.getComputedStyle(document.body).getPropertyValue('--icon-width')),
+                    height: parseFloat(window.getComputedStyle(document.body).getPropertyValue('--icon-height'))
+                }}
             />
         </div>
     );

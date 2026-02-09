@@ -42,3 +42,14 @@
     text-align: center;
     transition: color 0.3s ease;
 }
+
+.user-icon {
+  width: var(--icon-width);
+  height: var(--icon-height);
+
+  padding: var(--icon-padding);
+
+  background-color: white;
+  border-radius: var(--radius);
+  border: 0.1px solid black;
+}

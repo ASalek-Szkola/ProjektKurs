@@ -3,6 +3,9 @@
 } */
 :root {
   --radius: .625rem;
+  --icon-width: 30px;
+  --icon-height: 30px;
+  --icon-padding: 5px;
   --background: oklch(100% 0 0);
   --foreground: oklch(13% .028 261.692);
   --card: oklch(100% 0 0);

@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import './MainPage.css';
-import NavigationPanel from './NavigationPanel';
 import CoursePanel from './CoursePanel';
 
 function App() {

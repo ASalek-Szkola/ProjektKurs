@@ -12,8 +12,8 @@
 .wrapper {
     background-color: white;
     border-radius: var(--radius);
-    width: 40px;
-    height: 40px;
+    width: var(--icon-width);
+    height: var(--icon-height);
 
-    padding: 5px;
+    padding: var(--icon-padding);
 }
